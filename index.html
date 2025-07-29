@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos</title>
+    
+    <!-- Links para CSS, Manifest e Ícones -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icon-96.png">
+    <link rel="icon" href="images/icon-48.png" type="image/png">
+    <meta name="theme-color" content="#333333"/>
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Nosso Catálogo</h1>
+        <p>Produtos selecionados com um toque especial.</p>
+    </header>
+
+    <main>
+        <!-- A grade onde os produtos serão exibidos pelo JavaScript -->
+        <div id="catalogo-grid" class="catalogo-grid">
+            <!-- Os cards dos produtos aparecerão aqui -->
+        </div>
+    </main>
+
+    <!-- O Modal (fica escondido por padrão) -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-button">&times;</span>
+            <img id="modal-img" src="" alt="Imagem do Produto">
+            <h2 id="modal-nome"></h2>
+            <p id="modal-descricao"></p>
+            <p id="modal-preco" class="preco"></p>
+        </div>
+    </div>
+
+    <!-- O JavaScript é chamado no final para garantir que o HTML foi carregado -->
+    <script src="script.js"></script>
+</body>
+</html>

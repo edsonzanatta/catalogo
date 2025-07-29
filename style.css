@@ -1,0 +1,131 @@
+/* style.css */
+
+/* --- VARIÁVEIS DE COR: O lugar mais fácil para os alunos customizarem! --- */
+:root {
+    --cor-primaria: #333333;       /* Cor principal para textos e cabeçalho */
+    --cor-secundaria: #6a1b9a;     /* Cor de destaque para preços e detalhes */
+    --cor-fundo: #f4f4f4;          /* Cor de fundo da página */
+    --cor-card: #ffffff;          /* Cor de fundo dos cards de produto */
+    --cor-sombra: rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* --- ESTILOS GERAIS --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-primaria);
+}
+
+/* --- CABEÇALHO --- */
+.main-header {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* --- GRADE DO CATÁLOGO (A MÁGICA DO CSS GRID) --- */
+.catalogo-grid {
+    display: grid;
+    /* Cria colunas flexíveis: no mínimo 250px de largura, mas se ajustam para preencher o espaço. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Espaço entre os cards */
+    padding: 20px;
+}
+
+/* --- CARD DE PRODUTO --- */
+.card-produto {
+    background-color: var(--cor-card);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    overflow: hidden; /* Garante que a imagem não "vaze" das bordas arredondadas */
+    text-align: center;
+    transition: transform 0.2s ease-in-out; /* Animação suave ao passar o mouse */
+    cursor: pointer;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" o card */
+}
+
+.card-produto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Faz a imagem cobrir a área sem distorcer */
+}
+
+.card-produto h3 {
+    margin: 15px 0 5px;
+}
+
+.card-produto .preco {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+/* --- MODAL (Janela de Detalhes) --- */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica fixo na tela, mesmo com rolagem */
+    z-index: 1000; /* Garante que fique na frente de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: var(--cor-card);
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    animation: slideIn 0.3s;
+}
+
+.modal-content img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: var(--cor-primaria);
+}
+
+/* --- ANIMAÇÕES SIMPLES --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

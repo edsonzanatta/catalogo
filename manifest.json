@@ -1,0 +1,21 @@
+{
+  "name": "Meu Catálogo de Produtos",
+  "short_name": "Catálogo",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f4f4f4",
+  "theme_color": "#333333",
+  "description": "Um catálogo de produtos minimalista criado como um PWA.",
+  "icons": [
+    {
+      "src": "images/icon-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}
