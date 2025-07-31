@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
             descricao: "Elegância atemporal em um relógio de bolso com mecanismo aparente. Um item de colecionador.",
             imagem: "images/produto-3.jpg"
         },
+		{
+            id: 4,
+            nome: "Relógio de Bolso",
+            preco: "R$ 320,00",
+            descricao: "Elegância atemporal em um relógio de bolso com mecanismo aparente. Um item de colecionador.",
+            imagem: "images/produto-4.jpg"
+        },
         // Adicione mais produtos aqui, seguindo o mesmo modelo.
     ];
 
